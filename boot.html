@@ -16,7 +16,8 @@
   <body>
     <div class="black-background">
         <div class="white-background">
-            <p>로그인하세요</p>
+            <p>잘헀어요</p>
+            <a id="close" class="btn btn-warning btn-sm" role="button">닫기</a>
         </div>
     </div>
     <div class="jumbotron main-background">
@@ -26,6 +27,9 @@
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a id="login" class="btn btn-primary btn-lg" role="button">Login</a>
       </div>
+      
+      <h6>로그인 입력하고 Login 버튼 클릭해봐</h6>
+      <input id="test-input">
 
       <!-- <script>
         $('#login').on('click', function(){
@@ -33,8 +37,16 @@
         });
       </script> -->
      <script>
+       
+
          $('#login').on('click', function(){
-             $('.black-background').show();
+            if($('#test-input').val() == '로그인'){
+            $('.black-background').show();
+          }
+         })
+
+         $('#close').on('click', function(){
+           $('.black-background').hide();
          })
      </script>
 
