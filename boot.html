@@ -16,8 +16,19 @@
   <body>
     <div class="black-background">
         <div class="white-background">
-            <p>잘헀어요</p>
-            <a id="close" class="btn btn-warning btn-sm" role="button">닫기</a>
+            <p>로그인하세요</p>              
+            <form action="login.php">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" id="email">
+              </div>
+              <p id="email-alert">이메일을 입력해주세요</p>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" id="password">
+              </div>
+              <p id="password-alert">비밀번호를 입력해주세요</p>
+              <button type="submit" class="btn btn-primary">전송</button>
+              <button id="close" class="btn btn-danger">닫기</button>
+            </form>
         </div>
     </div>
     <div class="jumbotron main-background">
@@ -27,27 +38,41 @@
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a id="login" class="btn btn-primary btn-lg" role="button">Login</a>
       </div>
-      
-      <h6>로그인 입력하고 Login 버튼 클릭해봐</h6>
-      <input id="test-input">
-
+     
       <!-- <script>
         $('#login').on('click', function(){
             $('.black-background').fadeIn();
         });
       </script> -->
      <script>
+
+      // 폼이 전송될 때
+      //만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문 띄움
        
+    $('form').on('submit',function(e){
+      if($('#email').val()==''){
+        e.preventDefault();
+        $('#email-alert').show();       
+      }else if($('#password').val()==''){
+        e.preventDefault();
+        $('#password-alert').show();
+      }
+    });
 
-         $('#login').on('click', function(){
-            if($('#test-input').val() == '로그인'){
-            $('.black-background').show();
-          }
-         })
 
-         $('#close').on('click', function(){
-           $('.black-background').hide();
-         })
+    $('#email').on('input', function(){
+      $('#email-alert').show();  
+    });
+
+
+  
+      $('#login').on('click', function(){
+        $('.black-background').show();
+      });
+
+      $('#close').on('click', function(){
+        $('.black-background').hide();
+      });
      </script>
 
    
