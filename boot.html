@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css"> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
-    <title>Hello, world!</title>
+    <title>기능연습</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -14,6 +14,14 @@
   
   </head>
   <body>
+
+    <div>
+      <div class="left-menu" id ="slide">
+        <div id="close-menu" class="close-menu" style="margin-left: 130px; z-index: 1; cursor: pointer">X</div>  
+        <sapn>Menu Title</sapn>                 
+      </div>
+    </div>
+
     <div class="black-background">
         <div class="white-background">
             <p>로그인하세요</p>              
@@ -37,22 +45,42 @@
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a id="login" class="btn btn-primary btn-lg" role="button">Login</a>
-      </div>
+        <a id="menu" class="btn btn-warning btn-lg" role="button">Slide Menu</a>
+    </div>
+
+      <script>
+
+      $('#menu').click(function(){
+        $('#slide').animate({marginLeft : '0px'},2000)
+      });
+
+      $('#close-menu').click(function(){
+        $('#slide').animate({marginLeft : '-150px'},2000)
+      });
+
+      $('#login').on('click', function(){
+       $('.black-background').addClass('slide-down');
+      });
+      
+
+      $('#close').on('click', function(){
+       $('.black-background').removeClass('slide-down');   
+      });
+
+    
      
-      <!-- <script>
-        $('#login').on('click', function(){
-            $('.black-background').fadeIn();
-        });
-      </script> -->
-     <script>
+ 
 
       // 폼이 전송될 때
-      //만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문 띄움
+      //만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문 
+      
+    var 이메일안내장 = $('#email-alert');
+
        
     $('form').on('submit',function(e){
       if($('#email').val()==''){
         e.preventDefault();
-        $('#email-alert').show();       
+        이메일안내장.show();       
       }else if($('#password').val()==''){
         e.preventDefault();
         $('#password-alert').show();
@@ -61,19 +89,13 @@
 
 
     $('#email').on('input', function(){
-      $('#email-alert').show();  
+      이메일안내장.show();  
     });
+    
 
+   
 
-  
-      $('#login').on('click', function(){
-        $('.black-background').show();
-      });
-
-      $('#close').on('click', function(){
-        $('.black-background').hide();
-      });
-     </script>
+</script>
 
    
   </body>
