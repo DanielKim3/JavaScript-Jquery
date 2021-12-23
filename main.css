@@ -40,7 +40,13 @@
 #email-alert{
     display: none;
 }
+#email-alert2{
+    display: none;
+}
 #password-alert{
+    display:none;
+}
+#password-alert2{
     display:none;
 }
 .left-menu{

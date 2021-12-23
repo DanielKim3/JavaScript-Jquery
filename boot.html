@@ -30,10 +30,12 @@
                 <input type="email" class="form-control" placeholder="Email" id="email">
               </div>
               <p id="email-alert">이메일을 입력해주세요</p>
+              <p id="email-alert2">이메일이 이상합니다.</p>
               <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" id="password">
               </div>
               <p id="password-alert">비밀번호를 입력해주세요</p>
+              <p id="password-alert2">비밀번호를 제대로 입력해주세요</p>
               <button type="submit" class="btn btn-primary">전송</button>
               <button id="close" class="btn btn-danger">닫기</button>
             </form>
@@ -58,7 +60,7 @@
         $('#slide').animate({marginLeft : '-150px'},2000)
       });
 
-      $('#login').on('click', function(){
+      $('#login').click( function(){
        $('.black-background').addClass('slide-down');
       });
       
@@ -74,24 +76,58 @@
       // 폼이 전송될 때
       //만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문 
       
-    var 이메일안내장 = $('#email-alert');
-
-       
+     var 이메일안내장 = $('#email-alert');
+     var 이메일안내장2 = $('#email-alert2');
+     var emailInput = $('#email').val();
+     var pswInput = $('password').val();
+     var 비밀번호안내장 = $('#password-alert2');  
+     
     $('form').on('submit',function(e){
-      if($('#email').val()==''){
+      
+      
+      if(/\S+@\S+\.\S+/.test(emailInput)== false){
         e.preventDefault();
-        이메일안내장.show();       
-      }else if($('#password').val()==''){
+        이메일안내장.show();
+        이메일안내장2.hide();
+      }else if($('#email').val()==''){
         e.preventDefault();
-        $('#password-alert').show();
+        이메일안내장2.show();
+        이메일안내장.hide();
       }
+
+      if(/[A-Z]/.test(pswInput)==false){
+        e.preventDefault();
+        비밀번호안내장.show();
+      }
+
+     
+    
+            
+      
+      
+      
+      // if($('#email').val()==''){
+      //   e.preventDefault();
+      //   이메일안내장.show();       
+      // }else if($('#password').val()==''){
+      //   e.preventDefault();
+      //   $('#password-alert').show();
+      // }
     });
 
 
     $('#email').on('input', function(){
       이메일안내장.show();  
+      이메일안내장2.hide();
     });
-    
+
+    $('#email').on('input', function(){
+      이메일안내장2.show();  
+      이메일안내장.hide();
+    });
+
+    ///\S+@\S+\.\S+/.test('wjinkim21@naver.com');
+ 
 
    
 
