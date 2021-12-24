@@ -1,138 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="main.css"> 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <title>기능연습</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
-  
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-
     <div>
-      <div class="left-menu" id ="slide">
-        <div id="close-menu" class="close-menu" style="margin-left: 130px; z-index: 1; cursor: pointer">X</div>  
-        <sapn>Menu Title</sapn>                 
+      <div class="left-menu" id="slide">
+        <div
+          id="close-menu"
+          class="close-menu"
+          style="margin-left: 130px; z-index: 1; cursor: pointer"
+        >
+          X
+        </div>
+        <sapn>Menu Title</sapn>
       </div>
     </div>
 
     <div class="black-background">
-        <div class="white-background">
-            <p>로그인하세요</p>              
-            <form action="login.php">
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" id="email">
-              </div>
-              <p id="email-alert">이메일을 입력해주세요</p>
-              <p id="email-alert2">이메일이 이상합니다.</p>
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" id="password">
-              </div>
-              <p id="password-alert">비밀번호를 입력해주세요</p>
-              <p id="password-alert2">비밀번호를 제대로 입력해주세요</p>
-              <button type="submit" class="btn btn-primary">전송</button>
-              <button id="close" class="btn btn-danger">닫기</button>
-            </form>
-        </div>
+      <div class="white-background">
+        <p>로그인하세요</p>
+        <form action="login.php">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              id="email"
+            />
+          </div>
+          <p id="email-alert">이메일을 입력해주세요</p>
+          <p id="email-alert2">이메일이 이상합니다.</p>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              id="password"
+            />
+          </div>
+          <p id="password-alert">비밀번호를 입력해주세요</p>
+          <p id="password-alert2">비밀번호를 제대로 입력해주세요</p>
+          <button type="submit" class="btn btn-primary">전송</button>
+          <button id="close" class="btn btn-danger">닫기</button>
+        </form>
+      </div>
     </div>
     <div class="jumbotron main-background">
-        <h1 class="display-4">Shitrs, Studio</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a id="login" class="btn btn-primary btn-lg" role="button">Login</a>
-        <a id="menu" class="btn btn-warning btn-lg" role="button">Slide Menu</a>
+      <h1 class="display-4">Nature, Studio</h1>
+      <p class="lead">
+        This is a simple hero unit, a simple jumbotron-style component for
+        calling extra attention to featured content or information.
+      </p>
+      <hr class="my-4" />
+      <p>
+        It uses utility classes for typography and spacing to space content out
+        within the larger container.
+      </p>
+      <a id="login" class="btn btn-primary btn-lg" role="button">Login</a>
+      <a id="menu" class="btn btn-warning btn-lg" role="button">Slide Menu</a>
     </div>
 
-      <script>
+    <h4 class="my-4 text-center">Nature is the best part of our treasure!</h4>
 
-      $('#menu').click(function(){
-        $('#slide').animate({marginLeft : '0px'},2000)
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="nature1.jpg" alt="첫번째 자연사진" />
+        </div>
+        <div class="slide-box">
+          <img src="nature2.jpg" alt="두번째 자연사진" />
+        </div>
+        <div class="slide-box">
+          <img src="nature5.jpg" alt="세번쩨 자연사진" />
+        </div>        
+      </div>
+    </div>
+
+    <button class="slide-1 btn-primary">1</button>
+    <button class="slide-2 btn-primary">2</button>
+    <button class="slide-3 btn-primary">3</button>
+
+    <div class="my-5"></div>
+
+    <script>
+      $(".slide-1").click(function () {
+        $(".slide-container").css("transform", "translateX(0vw)");
       });
 
-      $('#close-menu').click(function(){
-        $('#slide').animate({marginLeft : '-150px'},2000)
+      $(".slide-2").click(function () {
+        $(".slide-container").css("transform", "translateX(-100vw)");
       });
 
-      $('#login').click( function(){
-       $('.black-background').addClass('slide-down');
+      $(".slide-3").click(function () {
+        $(".slide-container").css("transform", "translateX(-200vw)");
       });
-      
+    </script>
 
-      $('#close').on('click', function(){
-       $('.black-background').removeClass('slide-down');   
+    <script>
+      $("#menu").click(function () {
+        $("#slide").animate({ marginLeft: "0px" }, 2000);
       });
 
-    
-     
- 
+      $("#close-menu").click(function () {
+        $("#slide").animate({ marginLeft: "-150px" }, 2000);
+      });
+
+      $("#login").click(function () {
+        $(".black-background").addClass("slide-down");
+      });
+
+      $("#close").on("click", function () {
+        $(".black-background").removeClass("slide-down");
+      });
 
       // 폼이 전송될 때
-      //만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문 
-      
-     var 이메일안내장 = $('#email-alert');
-     var 이메일안내장2 = $('#email-alert2');
-     var emailInput = $('#email').val();
-     var pswInput = $('password').val();
-     var 비밀번호안내장 = $('#password-alert2');  
-     
-    $('form').on('submit',function(e){
-      
-      
-      if(/\S+@\S+\.\S+/.test(emailInput)== false){
-        e.preventDefault();
+      //만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문
+
+      var 이메일안내장 = $("#email-alert");
+      var 이메일안내장2 = $("#email-alert2");
+      var emailInput = $("#email").val();
+      var pswInput = $("password").val();
+      var 비밀번호안내장 = $("#password-alert2");
+
+      $("form").on("submit", function (e) {
+        if (/\S+@\S+\.\S+/.test(emailInput) == false) {
+          e.preventDefault();
+          이메일안내장.show();
+          이메일안내장2.hide();
+        } else if ($("#email").val() == "") {
+          e.preventDefault();
+          이메일안내장2.show();
+          이메일안내장.hide();
+        }
+
+        if (/[A-Z]/.test(pswInput) == false) {
+          e.preventDefault();
+          비밀번호안내장.show();
+        }
+
+        // if($('#email').val()==''){
+        //   e.preventDefault();
+        //   이메일안내장.show();
+        // }else if($('#password').val()==''){
+        //   e.preventDefault();
+        //   $('#password-alert').show();
+        // }
+      });
+
+      $("#email").on("input", function () {
         이메일안내장.show();
         이메일안내장2.hide();
-      }else if($('#email').val()==''){
-        e.preventDefault();
+      });
+
+      $("#email").on("input", function () {
         이메일안내장2.show();
         이메일안내장.hide();
-      }
+      });
 
-      if(/[A-Z]/.test(pswInput)==false){
-        e.preventDefault();
-        비밀번호안내장.show();
-      }
-
-     
-    
-            
-      
-      
-      
-      // if($('#email').val()==''){
-      //   e.preventDefault();
-      //   이메일안내장.show();       
-      // }else if($('#password').val()==''){
-      //   e.preventDefault();
-      //   $('#password-alert').show();
-      // }
-    });
-
-
-    $('#email').on('input', function(){
-      이메일안내장.show();  
-      이메일안내장2.hide();
-    });
-
-    $('#email').on('input', function(){
-      이메일안내장2.show();  
-      이메일안내장.hide();
-    });
-
-    ///\S+@\S+\.\S+/.test('wjinkim21@naver.com');
- 
-
-   
-
-</script>
-
-   
+      ///\S+@\S+\.\S+/.test('wjinkim21@naver.com');
+    </script>
   </body>
 </html>

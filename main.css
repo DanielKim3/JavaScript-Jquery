@@ -57,3 +57,16 @@
     position: fixed;
     margin-left: -150px;
 }
+.slide-container{
+    transform : translateX(-100vw);
+    transition: transform 1.5s;
+    width: 300vw;   
+}
+.slide-box{
+    width: 100vw;
+    float: left;  
+    margin-bottom:1rem;  
+}
+.slide-box img{
+    width: 100%;
+}
